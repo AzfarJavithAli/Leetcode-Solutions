@@ -9,14 +9,11 @@ class Solution {
 
             // Positive overflow
             if(rev > Integer.MAX_VALUE / 10 ||
-              (rev == Integer.MAX_VALUE / 10 && digit > 7))
-                return 0;
-
-            // Negative overflow
-            if(rev < Integer.MIN_VALUE / 10 ||
+              (rev == Integer.MAX_VALUE / 10 && digit > 7) || rev < Integer.MIN_VALUE / 10 ||
               (rev == Integer.MIN_VALUE / 10 && digit < -8))
                 return 0;
 
+            
             rev = rev * 10 + digit;
             x /= 10;
         }
